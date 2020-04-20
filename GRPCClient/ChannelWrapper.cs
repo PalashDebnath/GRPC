@@ -11,9 +11,9 @@ namespace GRPCClient
         {
             //const string _target = "127.0.0.1:5001";
             const int _port = 5001;
-            string clientCertificate = File.ReadAllText("GRPC.Client/ssl/client.crt");
-            string clientKey = File.ReadAllText("GRPC.Client/ssl/client.key");
-            string caCertificate = File.ReadAllText("GRPC.Client/ssl/ca.crt");
+            string clientCertificate = File.ReadAllText("GRPCClient/ssl/client.crt");
+            string clientKey = File.ReadAllText("GRPCClient/ssl/client.key");
+            string caCertificate = File.ReadAllText("GRPCClient/ssl/ca.crt");
             SslCredentials channelCredentials = new SslCredentials(caCertificate, new KeyCertificatePair(clientCertificate, clientKey));
 
             Channel channel = new Channel("localhost", _port, channelCredentials);

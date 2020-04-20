@@ -17,9 +17,9 @@ namespace GRPCServer
             Server server = null;            
             try
             {
-                string serverCertificate = File.ReadAllText("GRPC.Server/ssl/server.crt");
-                string serverKey = File.ReadAllText("GRPC.Server/ssl/server.key");
-                string caCertificate = File.ReadAllText("GRPC.Server/ssl/ca.crt");
+                string serverCertificate = File.ReadAllText("GRPCServer/ssl/server.crt");
+                string serverKey = File.ReadAllText("GRPCServer/ssl/server.key");
+                string caCertificate = File.ReadAllText("GRPCServer/ssl/ca.crt");
                 SslServerCredentials serverCredentials = new SslServerCredentials(new List<KeyCertificatePair>(){ new KeyCertificatePair(serverCertificate, serverKey) }, caCertificate, true);
 
                 server = new Server()
