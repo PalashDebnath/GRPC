@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package blogPackage;
+
+message Blog {
+    string id = 1;
+    string author_id = 2;
+    string title = 3;
+    string content = 4;
+}
+
+message BlogRequest {
+    Blog blog = 1;
+}
+
+message BlogResponse {
+    Blog blog = 1;
+}
+
+service BlogService {
+    //Unary Service
+    rpc CreateBlogUnary(BlogRequest) returns (BlogResponse) {}
+
+    //Unary Service
+    rpc ReadBlogUnary(BlogRequest) returns (BlogResponse) {}
+
+    //Unary Service
+    rpc UpdateBlogUnary(BlogRequest) returns (BlogResponse) {}
+
+    //Unary Service
+    rpc DeleteBlogUnary(BlogRequest) returns (BlogResponse) {}
+}

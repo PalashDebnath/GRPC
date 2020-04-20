@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package squareRootPackage;
+
+message SquareRootRequest {
+    int32 number = 1;
+}
+
+message SquareRootResponse {
+    double result = 1;
+}
+
+service SquareRootService {
+    //Unary Service
+    rpc SquareRootUnary(SquareRootRequest) returns (SquareRootResponse) {}
+}
